@@ -14,9 +14,11 @@
  */
 
 import React from 'react';
-import { Box, makeStyles, Paper, Theme, Typography } from '@material-ui/core';
+import { Box, makeStyles, Paper, Tab, Theme, Typography } from '@material-ui/core';
 import { CentralZone, EastZone, LayoutWrapper, NorthZone, WestZone } from '@jda/lui-dashboard-scaffolding-layouts';
 import { LuiLogoStacked } from '@jda/lui-common-component-library';
+
+import {TabsComponent} from './TabsComponent'
 
 const useStyles = makeStyles((theme: Theme) => {
   return {
@@ -65,7 +67,12 @@ export function Welcome() {
 
   return (
     <div className={classes.welcomeContainer}>
-      <LayoutWrapper>
+
+      <h1>Home Page </h1>
+      <div>
+        <TabsComponent />
+      </div>
+      {/* <LayoutWrapper>
         <NorthZone
           title="New Micro Frontend"
           stickyData="Sticky data hidden until scroll"
@@ -92,7 +99,7 @@ export function Welcome() {
         <EastZone isHidden={false} isCollapsed={false} isSticky={false}>
           <Paper className={classes.paperEastZone}></Paper>
         </EastZone>
-      </LayoutWrapper>
+      </LayoutWrapper> */}
     </div>
   );
 }
